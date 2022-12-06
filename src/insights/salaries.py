@@ -78,7 +78,7 @@ def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
         min = str(job["min_salary"])
 
         if max.isalpha() or min.isalpha() or int(max) < int(min):
-            raise TypeError("Job salary is invalid")
+            raise TypeError()
 
         return int(min) <= int(salary) <= int(max)
     except TypeError:
