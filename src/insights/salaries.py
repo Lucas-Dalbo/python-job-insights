@@ -74,21 +74,17 @@ def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
         If `salary` isn't a valid integer
     """
     try:
-        max_salary = job["max_salary"]
-        min_salary = job["min_salary"]
-    except KeyError:
-        raise ValueError("Job salary not found")
+        max = str(job["max_salary"])
+        min = str(job["min_salary"])
 
-    if not str(max_salary).isdigit() or not str(min_salary).isdigit():
-        raise ValueError("Job salary is invalid")
+        if max.isalpha() or min.isalpha() or int(max) < int(min):
+            raise TypeError("Job salary is invalid")
 
-    if int(max_salary) < int(min_salary):
-        raise ValueError("Job salary miss informed")
-
-    try:
-        return int(min_salary) <= int(salary) <= int(max_salary)
+        return int(min) <= int(salary) <= int(max)
     except TypeError:
-        raise ValueError("Salary must be a number")
+        raise ValueError("Error")
+    except KeyError:
+        raise ValueError("Error")
 
 
 def filter_by_salary_range(
