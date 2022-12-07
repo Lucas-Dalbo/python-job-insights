@@ -1,6 +1,7 @@
 import pytest
 from src.pre_built.sorting import sort_by
 
+
 @pytest.fixture()
 def jobs_list():
     return [
@@ -8,6 +9,7 @@ def jobs_list():
         {"min_salary": 1000, "max_salary": 1200, "date_posted": "2020-04-03"},
         {"min_salary": 2000, "max_salary": 3000, "date_posted": "2020-10-15"},
     ]
+
 
 def test_sort_by_criteria(jobs_list):
     # min_salary
@@ -19,7 +21,7 @@ def test_sort_by_criteria(jobs_list):
 
     sort_by(jobs_list, "min_salary")
     assert jobs_list == sorted_by_min
-    
+
     # max_salary
     sorted_by_max = [
         {"min_salary": 2000, "max_salary": 3000, "date_posted": "2020-10-15"},
