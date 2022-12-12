@@ -16,7 +16,7 @@ Desenvolver funções que são implementadas a um aplicativo web através do Fla
  - Realizar a manipulação de arquivos.
  - Escrever funções.
  - Escrever testes com Pytest.
- - Escrever seus próprios módulos e importá-los em outros códigos.
+ - Escrever meus próprios módulos e importá-los em outros códigos.
 
 ---
 ## Requisitos
